@@ -11,13 +11,12 @@ class GameWidget(Widget):
         super().__init__(**kwargs)
 
         self.asset_manager = AssetManager()
-        self.current_sound = None  # Track the currently playing sound
+        self.current_sound = None
 
         setup_ui(self)
         setup_audio(self)
         setup_input(self)
 
-        # Update for smooth movement
         Clock.schedule_interval(self.update, 1.0 / 60.0)
 
     def update(self, dt):
@@ -25,4 +24,4 @@ class GameWidget(Widget):
 
     def start_animation(self):
         from .animation import start_animation
-        start_animation(self.char_image)
+        start_animation(self.char_image) # pyright: ignore[reportAttributeAccessIssue]

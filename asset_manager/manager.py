@@ -12,7 +12,6 @@ class AssetManager:
         self.load_sounds("assets/sounds")
 
     def load_images(self, image_dir):
-        # Load images
         if os.path.exists(image_dir):
             for filename in os.listdir(image_dir):
                 if filename.endswith(".png"):

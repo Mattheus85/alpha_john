@@ -7,7 +7,7 @@ def setup_input(widget):
 def on_keystroke_down(widget, codepoint, modifier):
     # Quit on Ctrl+Shift+Q
     if codepoint == 'q' and all(v in modifier for v in ['ctrl', 'shift']):
-        App.get_running_app().stop()
+        App.get_running_app().stop() # type: ignore
         return True
 
     shifted_numbers_map = {

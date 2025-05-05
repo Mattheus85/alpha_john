@@ -2,9 +2,8 @@ from kivy.core.audio import SoundLoader
 from asset_manager.config import BACKGROUND_MUSIC_PATH
 
 def setup_audio(widget):
-    # Background music
     widget.music = SoundLoader.load(BACKGROUND_MUSIC_PATH)
-    widget.music.loop = True
+    widget.music.loop = True # pyright: ignore[reportOptionalMemberAccess]
     # widget.music.play()
 
 def play_sound(widget, char):

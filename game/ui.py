@@ -8,5 +8,5 @@ def setup_ui(widget):
 
     widget.char_image = Image(size=(1800, 900), fit_mode="contain", opacity=0)
     widget.char_image.center = (Window.size[0] / 2, Window.size[1] / 2)
-    widget.char_image.current_anim = None
+    widget.char_image.current_anim = None  # pyright: ignore[reportAttributeAccessIssue]
     widget.add_widget(widget.char_image)
