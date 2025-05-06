@@ -7,7 +7,8 @@ def setup_input(widget):
 def on_keystroke_down(widget, codepoint, modifier):
     # print(f"codepoint: {codepoint}\nmodifier: {modifier}")
 
-    # Quit on Ctrl+Shift+Q, does not work correctly with wayland, must use Hyprland's Meta+Shift+Q
+    # Quit on Ctrl+Shift+Q
+    # NOTE: This does not work correctly with wayland: use Hyprland's Meta+Shift+Q
     if codepoint == 'q' and all(v in modifier for v in ['ctrl', 'shift']):
         App.get_running_app().stop() # type: ignore
         return True
